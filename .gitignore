@@ -1,0 +1,4 @@
+.env
+.dev.Dockerfile
+docker-compose.yaml
+./zagava_app
