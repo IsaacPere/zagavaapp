@@ -2,3 +2,5 @@
 .dev.Dockerfile
 docker-compose.yaml
 ./zagava_app
+./ZagavaDatabase
+.dockerignore

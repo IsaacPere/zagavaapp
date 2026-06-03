@@ -1,11 +1,11 @@
-#include "database/zagava_database.hpp"
+#include "database/real_zagava_database.hpp"
 #include <curl/curl.h>
 #include <curl/easy.h>
 #include <iostream>
 
 int main() {
 
-    open_database_configuration();
+    open_database_file();
 
     CURL *website_scarpping_app = curl_easy_init();
     if(website_scarpping_app) {
