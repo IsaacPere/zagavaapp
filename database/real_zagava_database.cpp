@@ -15,7 +15,8 @@ inline void open_database_file() {
     sqlite3_close(zagava_database_file);
 }
 
-inline void
+inline void create_database_file(sqlite3 *zagava_database_file) {
+}
 
 inline void close_database_file(sqlite3 *zagava_database_file) {
     sqlite3_close(zagava_database_file);
