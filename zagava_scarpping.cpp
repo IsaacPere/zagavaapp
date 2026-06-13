@@ -1,15 +1,9 @@
-#include "auto/zagava_autoapply.cpp"
-#include "database/real_zagava_database.cpp"
-#include "screenshot/zagava_screenshot.hpp"
-#include "server/network_details.hpp"
-#include <curl/curl.h>
-#include <curl/easy.h>
+#include "auto/zagava_autoapply.hpp"
 
+using namespace starting_scarpping_operations;
 
 int main() {
-    open_database_file();
-    scarping_server_details();
-    screenshot_the_tab_details();
-    execute_the_cron_condition();
+    establishing_web_scarping_information();
+    std::cout << "Base website url entering: " << starting_scarpping_operations::zagava_base_url_details << '\n';
     return 0;
 }
