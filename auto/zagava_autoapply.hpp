@@ -1,6 +1,7 @@
 #ifndef ZAGAVA_AUTOAPPLY_HPP
 #define ZAGAVA_AUTOAPPLY_HPP
 
+// #include <cstdint>
 #include <iostream>
 #include <string>
 #include <curl/curl.h>
@@ -45,7 +46,9 @@ namespace starting_scarpping_operations {
             curl_easy_setopt(zagava_credentials_curl, CURLOPT_URL, zagava_base_url_details.c_str());
             curl_easy_setopt(zagava_credentials_curl, CURLOPT_USERNAME, zagava_username_details.c_str());
             curl_easy_setopt(zagava_credentials_curl, CURLOPT_PASSWORD, zagava_password_details.c_str());
-            curl_easy_setopt(zagava_credentials_curl, CURLOPT_PORT, 1L);
+            curl_easy_setopt(zagava_credentials_curl, CURLOPT_POST, 1L);
+            curl_easy_setopt(zagava_credentials_curl, CURLOPT_POSTFIELDS, zagava_username_details.c_str());
+            curl_easy_setopt(zagava_credentials_curl, CURLOPT_POSTFIELDS, zagava_password_details.c_str());
             zagava_credentials_result = curl_easy_perform(zagava_credentials_curl);
             curl_easy_cleanup(zagava_credentials_curl);
         }

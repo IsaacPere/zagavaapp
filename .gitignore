@@ -2,5 +2,7 @@
 .dev.Dockerfile
 docker-compose.yaml
 ./zagava_app
+./zagava_scarping
 ./ZagavaDatabase.db
 .dockerignore
+password.txt
