@@ -1,7 +1,6 @@
 #ifndef ZAGAVA_AUTOAPPLY_HPP
 #define ZAGAVA_AUTOAPPLY_HPP
 
-// #include <cstdint>
 #include <iostream>
 #include <string>
 #include <curl/curl.h>
@@ -21,9 +20,17 @@ namespace starting_scarpping_operations {
             CURLcode zagava_scarpping_result;
             curl_easy_setopt(zagava_scarp_details, CURLOPT_URL, zagava_base_url_details.c_str());
             zagava_scarpping_result = curl_easy_perform(zagava_scarp_details);
+            if (zagava_scarpping_result == CURLE_OK) {
+                char *zagava_server_details;
+                curl_easy_getinfo(zagava_scarp_details, CURLINFO_CONTENT_TYPE, &zagava_server_details);
+                if(zagava_server_details) {
+                    printf("The content type is: %s\n", zagava_server_details);
+                }
+            }
             curl_easy_cleanup(zagava_scarp_details);
         }
     }
+
     inline void establishing_portal_url() {
         std::cout << "Enter the portal url : ";
         std::cin >> portal_url_details;
@@ -52,6 +59,6 @@ namespace starting_scarpping_operations {
             zagava_credentials_result = curl_easy_perform(zagava_credentials_curl);
             curl_easy_cleanup(zagava_credentials_curl);
         }
-    }
+
 }
 #endif
