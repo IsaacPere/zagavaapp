@@ -8,7 +8,7 @@
 
 namespace starting_scarpping_operations {
     inline int zagava_username_details;
-    inline int zagava_password_details;
+    inline std::string zagava_password_details;
     inline std::string zagava_base_url_details;
     inline std::string portal_url_details;
 
@@ -48,8 +48,8 @@ namespace starting_scarpping_operations {
         std::cin >> zagava_password_details;
         CURL *zagava_credentials_curl = curl_easy_init();
         if(zagava_credentials_curl) {
-            std::string zagava_posting_data = std::to_string(zagava_username_details) + std::to_string(zagava_password_details);
-            curl_easy_setopt(zagava_credentials_curl, CURLOPT_URL, zagava_base_url_details.c_str());
+            std::string zagava_posting_data = std::to_string(zagava_username_details) + zagava_password_details;
+            curl_easy_setopt(zagava_credentials_curl, CURLOPT_URL, portal_url_details.c_str());
             curl_easy_setopt(zagava_credentials_curl, CURLOPT_POST, 1L);
             curl_easy_setopt(zagava_credentials_curl, CURLOPT_POSTFIELDS, zagava_posting_data.c_str());
             CURLcode zagava_credentials_result = curl_easy_perform(zagava_credentials_curl);
