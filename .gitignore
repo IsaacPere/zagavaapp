@@ -1,7 +1,7 @@
 .env
-.dev.Dockerfile
+Dockerfile
 docker-compose.yaml
+dockerignore
+password.txt
 ./zagava_app
 ./ZagavaDatabase.db
-.dockerignore
-password.txt
